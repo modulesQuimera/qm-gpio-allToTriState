@@ -1,6 +1,6 @@
 {
   "name": "qm-hub-gpio-all-to-tri-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "modulo allToTriState",
   "main": "AllToTriState.js",
   "scripts": {
