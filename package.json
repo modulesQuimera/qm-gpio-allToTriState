@@ -1,0 +1,25 @@
+{
+  "name": "qm-hub-gpio-all-to-tri-state",
+  "version": "1.0.0",
+  "description": "modulo allToTriState",
+  "main": "AllToTriState.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulesQuimera/qm-hub-gpio-all-to-tri-state.git"
+  },
+  "keywords": ["quimera", "hub", "JIG"],
+  "author": "HUB-LSE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modulesQuimera/qm-hub-gpio-all-to-tri-state/issues"
+  },
+  "homepage": "https://github.com/modulesQuimera/qm-hub-gpio-all-to-tri-state#readme",
+  "node-red": {
+		"nodes": {
+			"AllToTriState": "AllToTriState.js"
+		}
+	}
+}
