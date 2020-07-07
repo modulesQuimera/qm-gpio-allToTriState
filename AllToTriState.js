@@ -23,14 +23,17 @@ module.exports = function(RED) {
                         type: "GPIO_modular_V1.0",
                         slot: 1,
                         method: "all_to_tri_state",
-                        GPIO_number: parseInt(node.gpionum),
-                        GPIO_output: node.output === "true" ? true : false
+                        // GPIO_number: parseInt(node.gpionum),
+                        // GPIO_output: node.output === "true" ? true : false
                     }
-                    if(currentMode == "test"){file.jig_test.push(command)}
-                    else{file.jig_error.push(command)}
+                    var file = globalContext.get("exportFile")
+                    var slot = globalContext.get("slot");
+
+                    if(currentMode == "test"){file.slots[slot].jig_test.push(command)}
+                    else{file.slots[slot].jig_error.push(command)}
                     globalContext.set("exportFile", file);
-                    node.status({fill:"green", shape:"dot", text:"done"}); // seta o status pra waiting
                     send(msg)
+                    console.log(command)
         //         }
         //         else{
         //             node.status({fill:"yellow", shape:"dot", text:"waiting"}); // seta o status pra waiting
