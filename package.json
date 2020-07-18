@@ -1,5 +1,5 @@
 {
-  "name": "qm-hub-gpio-alltotristate",
+  "name": "qm-gpio-alltotristate",
   "version": "1.0.3",
   "description": "modulo allToTriState",
   "main": "AllToTriState.js",
