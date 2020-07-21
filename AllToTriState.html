@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('AllToTriState',{
         category: 'GPIO Module',
-        color: '#98FB98',
+        color: '#FFFF00',
         defaults: {
             name:{
                 value: ""
@@ -9,11 +9,15 @@
             gpionum:{
                 value: ""
             },
+            slot:{
+                value:"",
+                required:true
+            }
         },
         inputs:1,
         outputs:1,
-        icon: "All_To_Tri_State.svg",
-        label: function() { return this.name || "All To Tri State" },
+        icon: "Gpio.svg",
+        label: function() { return this.name? "All To Tri State - " + this.name: "All To Tri State" },
         paletteLabel: "All To Tri State",
     });
 </script>
@@ -63,18 +67,17 @@
 
 
 <script type="text/html" data-template-name="AllToTriState">
-
-
     <div class="form-row columm">
-    <strong class="descript">
-        All To Tri State component is used to assign the value of all <br> GPIO ports to tri_statet.
-    </strong>
+        <strong class="descript">
+            Take the gpio´s and put them all in tri state mode.
     </div>
-
-
+    <div class="form-row columm">
+        <label  for="node-input-slot"><i class="fa fa-sliders"></i> Slot</label>
+        <input min="0" type="number" id="node-input-slot" style="width:20%;">
+    </div>
     <div class="hr-div-tri-state">
         <hr>
-        <span class="optional">Optional</span>
+            <span class="optional">Optional</span>
         <hr>
     </div>
 
@@ -83,11 +86,6 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 
-
-    <!-- <div class="form-row">
-        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div> -->
     <div class="form-row" >
         <!-- <label for="node-input-gpionum"><i class="fa fa-microchip" aria-hidden="true"></i> Numero do GPIO</label>
         <select id="node-input-gpionum" style="width:15%;">
@@ -117,5 +115,5 @@
 </script>
 
 <script type="text/html" data-help-name="AllToTriState">
-    <p>Working on it...</p>
+    <p>Take the gpio´s and put them all in tri state mode.</p>
 </script>
